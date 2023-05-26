@@ -67,7 +67,7 @@ jobs:
 
       - uses: krdlab/setup-haxe@master
         with:
-          haxe-version: 4.2.0
+          haxe-version: 4.2.5
       # Runs a set of commands using the runners shell
       - name: Install Haxelib
         run: |
@@ -108,7 +108,7 @@ jobs:
 
       - uses: krdlab/setup-haxe@master
         with:
-          haxe-version: 4.2.0
+          haxe-version: 4.2.5
       # Runs a set of commands using the runners shell
       - name: Install Haxelib
         run: |
@@ -189,9 +189,9 @@ jobs:
           haxelib install flixel-ui 
           haxelib install flixel-addons
           haxelib install hscript
-          haxelib git linc_luajit https://github.com/jigsaw-4277821/linc_luajit.git
-          haxelib git AndroidTools https://github.com/jigsaw-4277821/AndroidTools.git   
-          haxelib git extension-videoview https://github.com/jigsaw-4277821/extension-videoview.git --quiet
+          haxelib git linc_luajit https://github.com/sirox228/linc_luajit.git
+          haxelib git AndroidTools https://github.com/PaRappa1996/extension-androidtools.git
+          haxelib git extension-videoview https://github.com/mcagabe19-stuff/extension-videoview.git
           haxelib list
           
       - name: Create Version Tag

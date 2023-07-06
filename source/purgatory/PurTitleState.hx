@@ -296,13 +296,15 @@ class PurTitleState extends MusicBeatState
 			bg.screenCenter();
 			bg.antialiasing = ClientPrefs.globalAntialiasing;
 			add(bg);
-	
+
+			#if (flixel < "5.0.0") 
 			slidething = new FlxBackdrop(Paths.image('hahaslider'),1,0,true,false);
 			slidething.velocity.set(-14,0);
 			slidething.x = -20;
 			slidething.y = 209;
 			slidething.setGraphicSize(Std.int(slidething.width * 0.65));
 			add(slidething); // i borrowed this from tricky hhehehehehe
+			#end
 
 			logoBl = new FlxSprite(245, -25);
 			logoBl.frames = Paths.getSparrowAtlas('logoBumpin');

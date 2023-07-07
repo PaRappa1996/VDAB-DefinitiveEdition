@@ -16,9 +16,10 @@ import sys.FileSystem;
 class SUtil
 {
     #if android
+    #if (flixel < "5.0.0")
     private static var aDir:String = null;
     private static var sPath:String = AndroidTools.getExternalStorageDirectory();  
-    private static var grantedPermsList:Array<android.Permissions> = AndroidTools.getGrantedPermissions();  
+    private static var grantedPermsList:Array<Permissions> = AndroidTools.getGrantedPermissions();  
     #end
 
     static public function getPath():String
@@ -54,7 +55,7 @@ class SUtil
                 SUtil.applicationAlert("Permissions", "The Game can't run without storage permissions please grant them in app settings" + "\n" + "Press Ok To Close The App");
             }
         }
-
+#end
         if (!FileSystem.exists(sPath + "/" + "." + Application.current.meta.get("file"))){
             FileSystem.createDirectory(sPath + "/" + "." + Application.current.meta.get("file"));
         }

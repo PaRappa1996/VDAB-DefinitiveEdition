@@ -43,13 +43,13 @@ class SUtil
     static public function doTheCheck()
     {
         #if android
-        if (!grantedPermsList.contains(Permissions.READ_EXTERNAL_STORAGE) || !grantedPermsList.contains(Permissions.WRITE_EXTERNAL_STORAGE)) {
+        if (!Permissions.getGrantedPermissions().contains(Permissions.READ_EXTERNAL_STORAGE) || !Permissions.getGrantedPermissions().contains(Permissions.WRITE_EXTERNAL_STORAGE)) {
             if (AndroidTools.getSDKversion() > 23 || AndroidTools.getSDKversion() == 23) {
                 AndroidTools.requestPermissions([Permissions.READ_EXTERNAL_STORAGE, Permissions.WRITE_EXTERNAL_STORAGE]);
             }  
         }
 
-        if (!grantedPermsList.contains(Permissions.READ_EXTERNAL_STORAGE) || !grantedPermsList.contains(Permissions.WRITE_EXTERNAL_STORAGE)) {
+        if (!Permissions.getGrantedPermissions().contains(Permissions.READ_EXTERNAL_STORAGE) || !Permissions.getGrantedPermissions().contains(Permissions.WRITE_EXTERNAL_STORAGE)) {
             if (AndroidTools.getSDKversion() > 23 || AndroidTools.getSDKversion() == 23) {
                 SUtil.applicationAlert("Permissions", "If you accepted the permisions for storage, good, you can continue, if you not the game can't run without storage permissions please grant them in app settings" + "\n" + "Press Ok To Close The App");
             } else {

@@ -155,6 +155,8 @@ jobs:
           
       - name: Setup Android SDK
         uses: android-actions/setup-android@v2
+        with:
+          ndk-version: r15c
 
       - name: Setup Haxe
         uses: krdlab/setup-haxe@master
@@ -166,7 +168,7 @@ jobs:
         run: |
           haxelib setup ~/haxelib
           haxelib install lime
-          haxelib install openfl-samples
+          haxelib install openfl
           haxelib install hxcpp 4.2.1 --quiet
           haxelib --never install flixel
           haxelib run lime setup flixel
